@@ -1,0 +1,20 @@
+ID: EDWP_PRODUCT
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: DW2
+   type: hdb
+   path: DW2
+   requires:
+    - name: hdi_DW2
+
+resources:
+ - name: hdi_DW2
+   parameters:
+      config:
+         schema: DW2
+         makeuniquename : False
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
